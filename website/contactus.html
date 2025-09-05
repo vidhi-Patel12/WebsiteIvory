@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Form</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="/contactus.css">
+   <!-- External CSS -->
+</head>
+
+<body>
+
+<!-- Top Bar -->
+    <!-- <div class="top-bar">
+        <div class="container">
+            <div class="left">
+                <span><i class="fas fa-phone-alt"></i> Call Now: +123 456 7890</span>
+                <span><i class="fas fa-envelope"></i> info@technoxpert.com</span>
+            </div>
+            <div class="right">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+   <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="brand">
+                <div class="logo"><img class="brand-text" src="/images/Logo 1-3.png"></img></div>
+                <!-- <div class="brand-text">Techno Xpert</div> -->
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/index.html" >Home</a></li>
+                <li><a href="/aboutus.html">About us</a></li>
+                <li><a href="/service.html">Service</a></li>
+                <li><a href="/project.html">Project</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="/contactus.html" class="active">Contact us</a></li>
+                <li><a href="#" class="btn btn-primary nav-btn">Get A Quote</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+
+     <div class="container">
+            <div class="contact-panel">
+                <div class="panel-left">
+                    <h3>Send Us A Message</h3>
+                    <p>Get in touch with us to see how our company can help you to grow your business online.</p>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i class="far fa-envelope"></i></div>
+                        <div class="info-text">
+                            <h5>Email</h5>
+                            <p>yourname@email.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-phone"></i></div>
+                        <div class="info-text">
+                            <h5>Phone</h5>
+                            <p>+123 456 78901</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="info-text">
+                            <h5>Location</h5>
+                            <p>Envato street 123 UK</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-right">
+                    <form class="form-card" action="#" method="post" onsubmit="return false;">
+                        <div class="grid-2">
+                            <input type="text" placeholder="First Name" required>
+                            <input type="text" placeholder="Last Name" required>
+                        </div>
+                        <div class="grid-2">
+                            <input type="email" placeholder="Email Address" required>
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                        <div class="grid-2">
+                            <input type="text" placeholder="Date">
+                            <input type="text" placeholder="Service">
+                        </div>
+                        <textarea rows="5" placeholder="Message"></textarea>
+                        <button class="cta-btn secondary" type="submit">Hire Us</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-overlay">
+            <div class="footer-content">
+
+                <!-- Subscribe Section -->
+                <div class="subscribe-box">
+                    <div class="row align-items-center">
+                        <!-- Left side -->
+                        <div class="col-md-6">
+                            <h2 class="mb-0">Looking For The Best <br>
+                                IT Business Solution</h2>
+                        </div>
+
+                        <!-- Right side -->
+                        <div class="col-md-6 text-md-end mt-3 mt-md-0">
+                            <form class="subscribe-form d-inline-flex">
+                                <input type="email" class="form-control me-2" placeholder="Enter your email" required>
+                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+    </footer>
+
+    <div class="footer-container">
+        <nav class="footer-nav">
+            <a href="/index.html">Home</a>
+            <a href="/aboutus.html">About us</a>
+            <a href="/service.html">Services</a>
+            <a href="/project.html">Projects</a>
+            <a href="/contactus.html">Contact us</a>
+        </nav>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="copyrightbar row">
+            <p class="copyrightbar p">&copy; 2022 All rights reserved.</p>
+        </div>
+    </div>
+
+    <!-- External JS -->
+    <script src="/contactus.js"></script>
+    <script>
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+
+  // Toggle nav menu when hamburger or its spans are clicked
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+    hamburger.classList.toggle("active"); // optional for animating spans
+  });
+
+  // Close menu when a nav link is clicked
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("show");
+      hamburger.classList.remove("active");
+    });
+  });
+</script>
+
+</body>
+
+</html>

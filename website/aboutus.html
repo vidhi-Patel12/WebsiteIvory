@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>About Us Section</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/aboutus.css">
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+    <!-- <div class="top-bar">
+        <div class="container">
+            <div class="left">
+                <span><i class="fas fa-phone-alt"></i> Call Now: +123 456 7890</span>
+                <span><i class="fas fa-envelope"></i> info@technoxpert.com</span>
+            </div>
+            <div class="right">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+   <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="brand">
+                <div class="logo"><img class="brand-text" src="/images/Logo 1-3.png"></img></div>
+                <!-- <div class="brand-text">Techno Xpert</div> -->
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/index.html" >Home</a></li>
+                <li><a href="/aboutus.html">About us</a></li>
+                <li><a href="/service.html">Service</a></li>
+                <li><a href="/project.html" class="active">Project</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="/contactus.html">Contact us</a></li>
+                <li><a href="#" class="btn btn-primary nav-btn">Get A Quote</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+  <div class="about-header">
+    <canvas id="network-lines"></canvas>
+    <h1>ABOUT US</h1>
+    <!-- <svg class="polygon-bg" viewBox="0 0 1300 320">
+      <g stroke="#fff" stroke-width="1" opacity="0.15">
+        <line x1="50" y1="60" x2="200" y2="40" />
+        <line x1="50" y1="60" x2="100" y2="180" />
+        <line x1="200" y1="40" x2="300" y2="100" />
+        <line x1="300" y1="100" x2="100" y2="180" />
+        <line x1="300" y1="100" x2="360" y2="40" />
+        <line x1="360" y1="40" x2="600" y2="120" />
+        <line x1="600" y1="120" x2="1000" y2="300" />
+        <line x1="1000" y1="300" x2="1150" y2="130" />
+        <line x1="1150" y1="130" x2="1200" y2="200" />
+        <line x1="1200" y1="200" x2="1300" y2="30" />
+        <circle cx="50" cy="60" r="5" />
+        <circle cx="200" cy="40" r="5" />
+        <circle cx="100" cy="180" r="5" />
+        <circle cx="300" cy="100" r="5" />
+        <circle cx="360" cy="40" r="5" />
+        <circle cx="600" cy="120" r="5" />
+        <circle cx="1000" cy="300" r="5" />
+        <circle cx="1150" cy="130" r="5" />
+        <circle cx="1200" cy="200" r="5" />
+        <circle cx="1300" cy="30" r="5" />
+      </g>
+    </svg> -->
+  </div>
+  <div class="about-cards-container">
+    <div class="about-card">
+      <div class="about-icon">
+        <!-- Projects SVG -->
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M5 4h14a2 2 0 0 1 2 2v2H3V6a2 2 0 0 1 2-2zm15 6v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8h16zm-11 4v2h2v-2H9zm4 0v2h2v-2h-2z">
+          </path>
+        </svg>
+      </div>
+      <div class="stat" data-count="200">0</div>
+      <div class="desc">Successful Projects</div>
+    </div>
+    <div class="about-card">
+      <div class="about-icon">
+        <!-- Clients SVG -->
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M16 11c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05C17.16 14.1 19 15.02 19 16.5V19h5v-2.5c0-2.33-4.67-3.5-7-3.5z">
+          </path>
+        </svg>
+      </div>
+      <div class="stat" data-count="150">0</div>
+      <div class="desc">happy clients</div>
+    </div>
+    <div class="about-card">
+      <div class="about-icon">
+        <!-- Tasks SVG -->
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M19 3H5c-1.1 0-2 .9-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5c0-1.1-.9-2-2-2zm-1.41 10.41l-4.59 4.59-2.59-2.59L8 16l4 4 6-6z">
+          </path>
+        </svg>
+      </div>
+      <div class="stat" data-count="20000">0</div>
+      <div class="desc">tasks completed</div>
+    </div>
+    <div class="about-card">
+      <div class="about-icon">
+        <!-- Team SVG -->
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M16 11c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05C17.16 14.1 19 15.02 19 16.5V19h5v-2.5c0-2.33-4.67-3.5-7-3.5z">
+          </path>
+        </svg>
+      </div>
+      <div class="stat" data-count="780">0</div>
+      <div class="desc">team</div>
+    </div>
+  </div>
+  <div class="section-container">
+    <div class="left-images">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+        alt="team working" class="main-img">
+      <div class="img-badge">
+        <span class="counter" data-target="470">0+</span>
+        <div class="badge-label">Worldwide Clients</div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80"
+        alt="discussion" class="mini-img mini-img-1">
+      <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+        alt="work on laptop" class="mini-img mini-img-2">
+    </div>
+    <div class="right-content">
+      <div class="who-we-are">Who We Are</div>
+      <div class="main-title">
+        Meet the Minds Behind Webtek
+      </div>
+      <div class="desc">
+        We’re more than just a digital agency. We’re a team dedicated to your success. Here’s what sets us apart:
+
+        Passionate Creators: We bring enthusiasm and creativity to every project.
+        Dedicated Partners: Your goals become our goals. We’re in this together.
+        Solution-Oriented Thinkers: We analyze, strategize, and deliver with results in mind.
+        Tech Innovators: From design to development, we push the boundaries of digital.
+        Customer-Centric: Your satisfaction is our priority, driving us to exceed expectations.
+
+      </div>
+      <button class="all-services-btn">All Services</button>
+    </div>
+
+  </div>
+  <div class="skills-section">
+    <div class="skills-bg">
+      <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=900&q=80"
+        alt="Team working">
+      <div class="bg-pattern left"></div>
+      <div class="bg-pattern right"></div>
+    </div>
+    <div class="skills-card">
+      <div class="skills-title">Skills</div>
+      <div class="skills-main-title">How We Do</div>
+      <div class="skills-desc">Crafting Solutions, Making Brands</div>    
+      <div class="skills-p">We know what we do best—and we do it with flair. From <b>mobile app & software developement</b> services  to app development, we have expert teams for each service. We ensure precision and expertise in every project.</div>
+      <div class="skill-bar">
+        <div class="label">Mobile &amp; Web Application</div>
+        <div class="bar">
+          <div class="progress" style="width: 95%"><span>95%</span></div>
+        </div>
+      </div>
+      <div class="skill-bar">
+        <div class="label">Frontend &amp; Backend</div>
+        <div class="bar">
+          <div class="progress" style="width: 75%"><span>75%</span></div>
+        </div>
+      </div>
+      <div class="skill-bar">
+        <div class="label">SEO</div>
+        <div class="bar">
+          <div class="progress" style="width: 80%"><span>80%</span></div>
+        </div>
+      </div>
+      <div class="skill-bar">
+        <div class="label">UI/UX</div>
+        <div class="bar">
+          <div class="progress" style="width: 80%"><span>80%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why Us -->
+  <section id="why-us" class="why-us fade-up">
+    <div class="container">
+      <div class="section-header">
+        <h5>Why Us</h5>
+        <h2>The Ivory Edge: Where Creativity Meets Precision</h2><br />
+        <p class="section-p">Choosing Ivory means choosing a partner dedicated to your brand’s journey. Here’s why we
+          stand
+          out:
+          <br />
+        </p>
+
+        <h3>Inspired Creativity</h3><br />
+        <p class="section-p">
+          Making brands with fresh, bold ideas. Our creative team approaches every project with originality and passion.
+          We make sure your brand captures attention.
+        </p>
+     
+        <h3>Strategic Roadmapping</h3><br />
+        <p class="section-p">
+        Planned for perfection. Yes, we believe great results come from proper planning, and we map out each step to
+        bring your vision to life efficiently and effectively.
+        </p>
+
+        <h3>Elegantly Minimalist</h3><br />
+        <p class="section-p">
+        Less is more. We focus on clean, purposeful design that lets your brand’s message shine without distraction.
+        And we focus on designs that capture audiences with clarity and impact.
+        </p>
+
+        <h3>Expertly Skilled</h3><br />
+        <p class="section-p">
+        Decades of combined experience. Our team is made up of expert professionals whose expertise spans across
+        design, development, and digital marketing. We guarantee best service and results.
+        </p>
+      </div>
+
+      <div class="why-grid">
+        <!-- Left image card with hover overlay -->
+        <article class="why-card hover-overlay" aria-label="Good Performance">
+          <img src="images/about_img01.jpg" alt="Two business women in the office working">
+          <div class="overlay">
+            <div class="overlay-icon"><i class="fas fa-thumbs-up"></i></div>
+            <h3>Good Performance</h3>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <a href="#" class="why-link">Read More</a>
+          </div>
+        </article>
+
+        <!-- Center card with hover overlay -->
+        <article class="why-card hover-overlay" aria-label="Highly Secure">
+          <img src="images/Layer-724-1-1.png" alt="Team collaborating in meeting">
+          <div class="overlay">
+            <div class="overlay-icon"><i class="fas fa-cog"></i></div>
+            <h3>Highly Secure</h3>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <a href="#" class="why-link">Read More</a>
+          </div>
+        </article>
+
+        <!-- Right card with hover overlay -->
+        <article class="why-card hover-overlay" aria-label="Fast Development">
+          <img src="images/office-work-with-diverse-coworkers.png" alt="Office work with diverse coworkers">
+          <div class="overlay">
+            <div class="overlay-icon"><i class="fas fa-laptop-code"></i></div>
+            <h3>Fast Development</h3>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <a href="#" class="why-link">Read More</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-overlay">
+      <div class="footer-content">
+
+        <!-- Subscribe Section -->
+        <div class="subscribe-box">
+          <div class="row align-items-center">
+            <!-- Left side -->
+            <div class="col-md-6">
+              <h2 class="mb-0">Looking For The Best <br>
+                IT Business Solution</h2>
+            </div>
+
+            <!-- Right side -->
+            <div class="col-md-6 text-md-end mt-3 mt-md-0">
+              <form class="subscribe-form d-inline-flex">
+                <input type="email" class="form-control me-2" placeholder="Enter your email" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+  </footer>
+
+  <div class="footer-container">
+    <nav class="footer-nav">
+       <a href="/index.html">Home</a>
+            <a href="/aboutus.html">About us</a>
+            <a href="/service.html">Services</a>
+            <a href="/project.html">Projects</a>
+            <a href="/contactus.html">Contact us</a>
+    </nav>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <div class="copyrightbar row">
+      <p class="copyrightbar p">&copy; 2022 All rights reserved.</p>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <!-- <div class="toast" id="toast">Message sent successfully!</div> -->
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="aboutus.js"></script>
+  <script>
+    function animateCounter(el, duration = 1200) {
+      const target = +el.getAttribute('data-count');
+      const start = 0;
+      const startTime = performance.now();
+
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        let value = Math.floor(progress * (target - start) + start);
+
+        // Add comma for thousands (e.g., 20,000)
+        value = value.toLocaleString();
+
+        el.textContent = value + '+';
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          el.textContent = target.toLocaleString() + '+';
+        }
+      }
+      requestAnimationFrame(update);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.stat').forEach(stat => {
+        animateCounter(stat);
+      });
+    });
+
+
+    // Run when DOM is ready
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.stat').forEach(stat => {
+        animateCounter(stat);
+      });
+    });
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const counter = document.querySelector('.counter');
+      if (!counter) return;
+      const target = +counter.getAttribute('data-target');
+      let current = 0;
+      const duration = 2500; // ms
+      const steps = 100;
+      const increment = Math.ceil(target / steps);
+      const interval = duration / steps;
+
+      function updateCounter() {
+        current += increment;
+        if (current >= target) {
+          counter.textContent = target + '+';
+        } else {
+          counter.textContent = current + '+';
+          setTimeout(updateCounter, interval);
+        }
+      }
+      updateCounter();
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll('.skill-bar .progress').forEach(function (progressDiv) {
+        // Get the target width from the inline style
+        const targetWidth = progressDiv.getAttribute('style').match(/width:\s*([\d.]+)%/);
+        if (targetWidth) {
+          // Reset width to 0, then trigger transition to target value
+          progressDiv.style.width = '0';
+          setTimeout(function () {
+            progressDiv.style.width = targetWidth[1] + '%';
+          }, 100); // slight delay for animation
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
