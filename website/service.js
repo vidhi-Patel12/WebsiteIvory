@@ -47,7 +47,7 @@ if (hamburger && navLinks) {
 
 async function loadServices() {
   try {
-    const response = await fetch("https://localhost:44394/api/Service");
+    const response = await fetch("https://192.168.1.109:5004/api/Service");
     if (!response.ok) throw new Error("Failed to fetch services");
 
     const services = await response.json();
@@ -58,7 +58,7 @@ async function loadServices() {
       // Extract filename for image path
       const fileName = service.image ? service.image.split("\\").pop().split("/").pop() : null;
       const imageUrl = fileName 
-        ? `https://localhost:44394/uploads/${fileName}`
+        ? `https://192.168.1.109:5004/uploads/${fileName}`
         : "https://via.placeholder.com/150?text=No+Image";
 
       const card = document.createElement("div");

@@ -8,58 +8,11 @@ function showSection(sectionId) {
   document.getElementById(sectionId).style.display = "block";
 }
 
-
-
-// document.addEventListener("DOMContentLoaded", async () => {
-//   const tableBody = document.getElementById("serviceTableBody");
-
-//   try {
-//     const response = await fetch("https://localhost:44394/api/Service");
-
-//     if (!response.ok) {
-//       throw new Error(`HTTP error! Status: ${response.status}`);
-//     }
-
-//     const services = await response.json();
-
-//     // Clear old rows
-//     tableBody.innerHTML = "";
-
-//     // Populate table
-//     services.forEach(service => {
-//       const row = document.createElement("tr");
-//       row.innerHTML = `
-//         <td>${service.serviceName}</td>
-//         <td>${service.description}</td>
-
-//         <td>
-//           <button class="action-btn edit" onclick="loadService(${service.serviceId})">
-//             <i class="fas fa-edit"></i>
-//           </button>
-//           <button class="action-btn delete" onclick="deleteService(${service.serviceId})">
-//             <i class="fas fa-trash-alt"></i>
-//           </button>
-//         </td>
-//       `;
-//       tableBody.appendChild(row);
-//     });
-//   } catch (error) {
-//     tableBody.innerHTML = `
-//       <tr><td colspan="4" style="color:red; text-align:center;">
-//         Failed to load services: ${error.message}
-//       </td></tr>
-//     `;
-//     console.error("Error fetching services:", error);
-//   }
-// });
-
-
-
 document.addEventListener("DOMContentLoaded", async () => {
   const tableBody = document.getElementById("serviceTableBody");
 
   try {
-    const response = await fetch("https://localhost:44394/api/Service");
+    const response = await fetch("https://192.168.1.109:5004/api/Service");
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
@@ -103,7 +56,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       tableBody.appendChild(row);
     });
 
-    // ✅ Initialize DataTable (Bootstrap 5 styling)
+    //  Initialize DataTable (Bootstrap 5 styling)
     if ($.fn.DataTable.isDataTable("#serviceTable")) {
       $("#serviceTable").DataTable().destroy();
     }
@@ -189,7 +142,7 @@ document.getElementById("serviceForm").addEventListener("submit", async function
   formData.append("UpdatedDate", now);
 
   try {
-    const response = await fetch("https://localhost:44394/api/Service/Post", {
+    const response = await fetch("https://192.168.1.109:5004/api/Service/Post", {
       method: "POST",
       body: formData
     });
@@ -220,7 +173,7 @@ async function deleteService(id) {
   if (!confirm("Are you sure you want to delete this service?")) return;
 
   try {
-    const response = await fetch(`https://localhost:44394/api/Service/${id}`, {
+    const response = await fetch(`https://192.168.1.109:5004/api/Service/${id}`, {
       method: "DELETE"
     });
 
@@ -252,7 +205,7 @@ function formatDateTimeISO(date) {
 // Load existing service by ID
 async function loadService(serviceId) {
   try {
-    const response = await fetch(`https://localhost:44394/api/Service/${serviceId}`);
+    const response = await fetch(`https://192.168.1.109:5004/api/Service/${serviceId}`);
     if (response.ok) {
       const service = await response.json();
 
@@ -267,7 +220,7 @@ async function loadService(serviceId) {
         const fileName = service.image.split("\\").pop().split("/").pop();
 
         // Construct public URL (served from wwwroot/uploads/)
-        const imageUrl = `https://localhost:44394/uploads/${fileName}`;
+        const imageUrl = `https://192.168.1.109:5004/uploads/${fileName}`;
 
         // Show preview
         const previewImg = document.getElementById("updatePreviewImage");
@@ -287,11 +240,11 @@ async function loadService(serviceId) {
       showSection("updateServiceSection");
     } else {
       document.getElementById("updateResult").innerHTML =
-        `<div class="alert alert-danger">❌ Failed to load service</div>`;
+        `<div class="alert alert-danger">Failed to load service</div>`;
     }
   } catch (err) {
     document.getElementById("updateResult").innerHTML =
-      `<div class="alert alert-danger">🚨 API Error: ${err.message}</div>`;
+      `<div class="alert alert-danger"> API Error: ${err.message}</div>`;
   }
 }
 
@@ -346,7 +299,7 @@ document.getElementById("updateForm").addEventListener("submit", async function 
   formData.append("UpdatedDate", now);
 
   try {
-    const response = await fetch("https://localhost:44394/api/Service/Update", {
+    const response = await fetch("https://192.168.1.109:5004/api/Service/Update", {
       method: "PUT",
       body: formData
     });
@@ -374,7 +327,7 @@ async function loadServices() {
   const tableBody = document.getElementById("serviceTableBody");
 
   try {
-    const response = await fetch("https://localhost:44394/api/Service");
+    const response = await fetch("https://192.168.1.109:5004/api/Service");
     if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
     const services = await response.json();
@@ -435,7 +388,7 @@ document.addEventListener("DOMContentLoaded", loadServices);
 
 async function getbyidService(serviceId) {
   try {
-    const response = await fetch(`https://localhost:44394/api/Service/${serviceId}`);
+    const response = await fetch(`https://192.168.1.109:5004/api/Service/${serviceId}`);
     if (!response.ok) throw new Error("Failed to fetch service");
 
     const service = await response.json();
@@ -447,7 +400,7 @@ async function getbyidService(serviceId) {
     // Handle image
     if (service.image) {
       const fileName = service.image.split("\\").pop().split("/").pop();
-      document.getElementById("viewServiceImage").src = `https://localhost:44394/uploads/${fileName}`;
+      document.getElementById("viewServiceImage").src = `https://192.168.1.109:5004/uploads/${fileName}`;
     } else {
       document.getElementById("viewServiceImage").src = "https://via.placeholder.com/250?text=No+Image";
     }

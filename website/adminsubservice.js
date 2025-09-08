@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   try {
     // Fetch both SubServices and Services to map ServiceId -> ServiceName
     const [subServiceRes, serviceRes] = await Promise.all([
-      fetch("https://localhost:44394/api/SubService"),
-      fetch("https://localhost:44394/api/Service")
+      fetch("https://192.168.1.109:5004/api/SubService"),
+      fetch("https://192.168.1.109:5004/api/Service")
     ]);
 
     if (!subServiceRes.ok || !serviceRes.ok) {
@@ -152,7 +152,7 @@ document.getElementById("serviceForm").addEventListener("submit", async function
   formData.append("UpdatedDate", now);
 
   try {
-    const response = await fetch("https://localhost:44394/api/SubService/Post", {
+    const response = await fetch("https://192.168.1.109:5004/api/SubService/Post", {
       method: "POST",
       body: formData
     });
@@ -183,7 +183,7 @@ async function deleteSubService(id) {
   if (!confirm("Are you sure you want to delete this service?")) return;
 
   try {
-    const response = await fetch(`https://localhost:44394/api/SubService/${id}`, {
+    const response = await fetch(`https://192.168.1.109:5004/api/SubService/${id}`, {
       method: "DELETE"
     });
 
@@ -216,7 +216,7 @@ function formatDateTimeISO(date) {
 
 async function loadServicesIntoDropdown(dropdownId, selectedId = null) {
   try {
-    const response = await fetch("https://localhost:44394/api/Service");
+    const response = await fetch("https://192.168.1.109:5004/api/Service");
     if (!response.ok) throw new Error("Failed to fetch services");
 
     const services = await response.json();
@@ -229,7 +229,7 @@ async function loadServicesIntoDropdown(dropdownId, selectedId = null) {
       option.textContent = service.serviceName;
 
       if (selectedId && service.serviceId === selectedId) {
-        option.selected = true; // 👈 preselect service in update form
+        option.selected = true; // preselect service in update form
       }
 
       dropdown.appendChild(option);
@@ -243,7 +243,7 @@ async function loadServicesIntoDropdown(dropdownId, selectedId = null) {
 // Load existing service by ID
 async function loadSubService(subServiceId) {
   try {
-    const response = await fetch(`https://localhost:44394/api/SubService/${subServiceId}`);
+    const response = await fetch(`https://192.168.1.109:5004/api/SubService/${subServiceId}`);
     if (response.ok) {
       const subService = await response.json();
 
@@ -258,7 +258,7 @@ async function loadSubService(subServiceId) {
       // Handle image preview
       if (subService.image) {
         const fileName = subService.image.split("\\").pop().split("/").pop();
-        const imageUrl = `https://localhost:44394/uploads/${fileName}`;
+        const imageUrl = `https://192.168.1.109:5004/uploads/${fileName}`;
 
         const previewImg = document.getElementById("updatePreviewImage");
         previewImg.src = imageUrl;
@@ -276,11 +276,11 @@ async function loadSubService(subServiceId) {
       showSection("updateServiceSection");
     } else {
       document.getElementById("updateResult").innerHTML =
-        `<div class="alert alert-danger">❌ Failed to load subservice</div>`;
+        `<div class="alert alert-danger">Failed to load subservice</div>`;
     }
   } catch (err) {
     document.getElementById("updateResult").innerHTML =
-      `<div class="alert alert-danger">🚨 API Error: ${err.message}</div>`;
+      `<div class="alert alert-danger">API Error: ${err.message}</div>`;
   }
 }
 
@@ -335,7 +335,7 @@ document.getElementById("updateForm").addEventListener("submit", async function 
   formData.append("UpdatedDate", now);
 
   try {
-    const response = await fetch("https://localhost:44394/api/SubService/Update", {
+    const response = await fetch("https://192.168.1.109:5004/api/SubService/Update", {
       method: "PUT",
       body: formData
     });
@@ -362,7 +362,7 @@ document.getElementById("updateForm").addEventListener("submit", async function 
 
 async function loadServices() {
   try {
-    const response = await fetch("https://localhost:44394/api/Service");
+    const response = await fetch("https://192.168.1.109:5004/api/Service");
     if (!response.ok) throw new Error("Failed to fetch services");
 
     const services = await response.json();
@@ -396,7 +396,7 @@ async function loadSubServices() {
 
   try {
     // 🔹 1. Fetch all services to map ID → Name
-    const serviceResp = await fetch("https://localhost:44394/api/Service");
+    const serviceResp = await fetch("https://192.168.1.109:5004/api/Service");
     if (!serviceResp.ok) throw new Error("Failed to fetch services");
     const services = await serviceResp.json();
 
@@ -406,7 +406,7 @@ async function loadSubServices() {
     });
 
     // 🔹 2. Fetch sub-services
-    const subResp = await fetch("https://localhost:44394/api/SubService");
+    const subResp = await fetch("https://192.168.1.109:5004/api/SubService");
     if (!subResp.ok) throw new Error("Failed to fetch sub-services");
     const subServices = await subResp.json();
 
@@ -477,7 +477,7 @@ document.addEventListener("DOMContentLoaded", loadSubServices);
 
 async function getbyidSubService(subServiceId) {
   try {
-    const response = await fetch(`https://localhost:44394/api/SubService/${subServiceId}`);
+    const response = await fetch(`https://192.168.1.109:5004/api/SubService/${subServiceId}`);
     if (!response.ok) throw new Error("Failed to fetch subservice");
 
     const subService = await response.json();
@@ -486,7 +486,7 @@ async function getbyidSubService(subServiceId) {
     let serviceName = "";
     if (subService.serviceId) {
       try {
-        const serviceResponse = await fetch(`https://localhost:44394/api/Service/${subService.serviceId}`);
+        const serviceResponse = await fetch(`https://192.168.1.109:5004/api/Service/${subService.serviceId}`);
         if (serviceResponse.ok) {
           const serviceData = await serviceResponse.json();
           serviceName = serviceData.serviceName; // 👈 use ServiceName
@@ -504,7 +504,7 @@ async function getbyidSubService(subServiceId) {
     // 3. Handle image
     if (subService.image) {
       const fileName = subService.image.split("\\").pop().split("/").pop();
-      document.getElementById("viewServiceImage").src = `https://localhost:44394/uploads/${fileName}`;
+      document.getElementById("viewServiceImage").src = `https://192.168.1.109:5004/uploads/${fileName}`;
     } else {
       document.getElementById("viewServiceImage").src = "https://via.placeholder.com/250?text=No+Image";
     }
